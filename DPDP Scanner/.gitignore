@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Environment
+.env
+
+# Crawler data
+crawler/analysis_data.json
+crawler/oracleJdk-26/
+
+# Backend vectorstore (auto-generated)
+DPDP-Guard-AI-main/vectorstore/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
