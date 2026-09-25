@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Lighter Spruce & Alabaster Palette */
+  --bg-primary: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --bg-card-elevated: #ffffff;
+  --spruce-primary: #0f766e;
+  --spruce-dark: #115e59;
+  --spruce-light: #0d9488;
+  --spruce-subtle: rgba(15, 118, 110, 0.08);
+  --spruce-border: rgba(15, 118, 110, 0.25);
+
+  /* Slate & Platinum Typography */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-light: #e2e8f0;
+
+  /* Golden Linings Palette */
+  --gold-primary: #d4af37;
+  --gold-dark: #b45309;
+  --gold-warm: #f59e0b;
+  --gold-subtle: rgba(212, 175, 55, 0.12);
+  --gold-lining: rgba(212, 175, 55, 0.35);
+  --gold-lining-hover: rgba(212, 175, 55, 0.65);
+  --gold-specular: inset 0 1px 0 rgba(254, 240, 138, 0.45);
+  --gold-glow: 0 4px 16px rgba(212, 175, 55, 0.18);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8fafc;
+  background-image: 
+    /* Subtle platinum-slate engineering micro-grid */
+    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    /* Top ambient spruce spotlight */
+    radial-gradient(ellipse 90% 50% at 50% -10%, rgba(15, 118, 110, 0.09), transparent 72%),
+    /* Gilded golden lining flare on upper right */
+    radial-gradient(ellipse 55% 45% at 92% 10%, rgba(212, 175, 55, 0.12), transparent 62%),
+    /* Spruce teal ambient tone on left */
+    radial-gradient(ellipse 55% 42% at 8% 45%, rgba(13, 148, 136, 0.07), transparent 62%),
+    /* Warm gold ambient floor glow */
+    radial-gradient(ellipse 60% 35% at 50% 105%, rgba(245, 158, 11, 0.06), transparent 60%);
+  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+  color: #0f172a;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes shimmerWave {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes goldGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.35), 0 0 20px rgba(15, 118, 110, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.55), 0 0 28px rgba(15, 118, 110, 0.35);
+  }
+}
+
+@keyframes stepGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.45);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 6px rgba(13, 148, 136, 0);
+  }
+}
+
+@keyframes liveTimerPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.6);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 5px rgba(217, 119, 6, 0);
+  }
+}
+
+@keyframes terminalBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+.telemetry-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.telemetry-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.telemetry-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+.telemetry-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
